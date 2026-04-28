@@ -64,12 +64,16 @@ const Section9Contact = () => {
         </div>
 
         {/* CENTER DECORATIVE BADGE (Rotating 'Watch My Resume') */}
-        <motion.div
+        <motion.a
+          href="https://drive.google.com/file/d/1O2hAYS4jZraRplw7YGogBhzqyxpnfyl7/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
           className="contact-resume-badge"
           initial={{ opacity: 0, scale: 0.8, rotate: -20 }}
           whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          whileHover={{ scale: 1.05 }}
         >
           <div className="resume-badge-inner">
             <svg viewBox="0 0 100 100" width="120" height="120" className="resume-circular-text">
@@ -86,7 +90,7 @@ const Section9Contact = () => {
               </svg>
             </div>
           </div>
-        </motion.div>
+        </motion.a>
 
         {/* RIGHT COLUMN (Form) */}
         <div className="contact-right-col">

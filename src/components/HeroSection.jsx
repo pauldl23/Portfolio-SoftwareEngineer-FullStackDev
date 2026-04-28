@@ -48,7 +48,10 @@ const HeroSection = () => {
               className="main-portrait"
             />
             
-            <motion.div 
+            <motion.a 
+              href="https://drive.google.com/file/d/1O2hAYS4jZraRplw7YGogBhzqyxpnfyl7/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="resume-badge-wrap"
               whileHover={{ scale: 1.05 }}
               animate={{ rotate: 360 }}
@@ -65,7 +68,7 @@ const HeroSection = () => {
                   </text>
                 </svg>
               </div>
-            </motion.div>
+            </motion.a>
           </motion.div>
         </div>
       </div>

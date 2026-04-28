@@ -49,13 +49,17 @@ const Section4Works = () => {
               high-end visual stories and digital platforms.
             </p>
 
-            <motion.button 
+            <motion.a 
+              href="https://drive.google.com/file/d/1O2hAYS4jZraRplw7YGogBhzqyxpnfyl7/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="watch-resume-btn-new"
               whileHover={{ scale: 1.05 }}
+              style={{ display: 'inline-flex', textDecoration: 'none' }}
             >
               WATCH RESUME
               <div className="btn-dot"></div>
-            </motion.button>
+            </motion.a>
           </motion.div>
 
           <div className="exp-list-side">

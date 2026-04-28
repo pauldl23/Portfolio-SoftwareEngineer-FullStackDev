@@ -1,27 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+// SVG Assets
+import icon1 from '../../page-sections/section3-svg/16_icon.svg';
+import icon2 from '../../page-sections/section3-svg/24_icon.svg';
+import icon3 from '../../page-sections/section3-svg/8_icon.svg';
+
 const services = [
   {
     id: "s1",
     ornament: "VIDEO • MOTION",
-    icon: "/assets/section3/25_vid.png",
-    title: "Video Editing",
-    desc: "From short-form reels to high-end cinematic features and corporate storytelling."
+    icon: icon1,
+    title: "Video Editing & Motion",
+    desc: "From short-form reels to cinematic edits, promos, and branded content designed for engagement and storytelling."
   },
   {
     id: "s2",
     ornament: "CODE • WEB",
-    icon: "/assets/section3/26_dev.png",
-    title: "Full Stack Dev",
-    desc: "Building scalable, efficient, and interactive web applications for diverse industries."
+    icon: icon2,
+    title: "Full Stack Development",
+    desc: "Building responsive, scalable, and high-performance web applications with clean architecture and seamless user experience."
   },
   {
     id: "s3",
     ornament: "DATA • ANALYSIS",
-    icon: "/assets/section3/27_data.png",
-    title: "Data Analysis",
-    desc: "A complete end-to-end data workflow, from extraction to insightful visualization."
+    icon: icon3,
+    title: "Data Analysis & Insights",
+    desc: "Transforming raw data into clear dashboards, reports, and actionable insights for smarter business decisions."
   }
 ];
 
@@ -34,6 +39,7 @@ const Section3Services = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="services-title-block"
           >
             <div className="services-badge">WHAT I OFFER</div>
             <h2 className="services-headline">
@@ -46,8 +52,14 @@ const Section3Services = () => {
             className="more-services-pill"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              const contactSection = document.querySelector('[data-section="9"]');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
-            MORE SERVICES
+            CONTACT ME
             <div className="pill-dot"></div>
           </motion.button>
         </header>
@@ -61,11 +73,17 @@ const Section3Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <div className="card-ornament">{service.ornament}</div>
-              <div className="card-icon-wrap">
-                <img src={service.icon} alt={service.title} className="service-icon-img" />
+              
+              <div className="card-top-row">
+                <div className="card-icon-wrap">
+                  <img src={service.icon} alt={service.title} className="service-icon-img" />
+                </div>
+                <div className="card-title-group">
+                  {service.ornament && <div className="card-ornament">{service.ornament}</div>}
+                  <h3 className="card-title">{service.title}</h3>
+                </div>
               </div>
-              <h3 className="card-title">{service.title}</h3>
+
               <p className="card-desc">{service.desc}</p>
               <div className="card-hover-glow"></div>
             </motion.div>

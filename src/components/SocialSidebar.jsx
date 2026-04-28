@@ -17,7 +17,7 @@ const SocialSidebar = () => {
         </motion.div>
       </div>
 
-      <div className="vertical-text-main">
+      <div className="sidebar-middle">
         <motion.a 
           href="#facebook" 
           className="social-link active-link"

@@ -7,7 +7,7 @@ const BioSection = () => {
       <div className="bio-container">
         <div className="bio-visual-side">
           <div className="arched-frame-wrapper">
-            <motion.div 
+            <motion.div
               className="arched-glass-frame"
               initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
               whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
@@ -15,8 +15,8 @@ const BioSection = () => {
             >
               <img src="/assets/11_nature.png" alt="nature" className="bio-frame-bg" />
               <img src="/assets/13_profilephoto.png" alt="Paul" className="bio-portrait" />
-              
-              <motion.div 
+
+              <motion.div
                 className="diagonal-lime-strip"
                 animate={{ x: [-100, 0] }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
@@ -33,7 +33,7 @@ const BioSection = () => {
           </div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="bio-text-side"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -57,8 +57,8 @@ const BioSection = () => {
           </div>
 
           <p className="bio-body-text">
-            I am a graduate of Bachelor of Science in Information Technology, 
-            passionate about creating high-end digital solutions and 
+            I am a graduate of Bachelor of Science in Computer Science,
+            passionate about creating high-end digital solutions and
             captivating visual stories.
           </p>
 

@@ -384,3 +384,4 @@ const Section7Video = () => {
 };
 
 export default Section7Video;
+

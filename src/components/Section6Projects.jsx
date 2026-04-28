@@ -9,7 +9,7 @@ const projects = [
     titleAccent: 'RSVP Website',
     tags: ['HTML', 'CSS', 'JavaScript', 'Python'],
     description: 'A custom wedding website developed for a client using HTML, CSS, JavaScript, and Python, featuring a personalized domain, RSVP integration with Google Sheets, Google Maps integration for venue location, and full website deployment for a seamless guest experience.',
-    image: '/page-sections/otherassets/wedding.png',
+    image: 'page-sections/otherassets/wedding.png',
     link: 'https://priyataha.com',
     hasImage: true,
   },
@@ -31,7 +31,7 @@ const projects = [
       password: '2200338'
     },
     image: '',
-    video: '/page-sections/otherassets/parkalistoMobile.mp4',
+    video: 'page-sections/otherassets/parkalistoMobile.mp4',
     link: 'https://appetize.io/app/b_46ojsnntu2jaf5cne6mtc22ocq',
     hasImage: false,
     hasVideo: true,
@@ -43,7 +43,7 @@ const projects = [
     titleAccent: 'POS',
     tags: ['DJANGO', 'SUPABASE', 'POS', 'INVENTORY', 'TAILWIND', 'HTML', 'JAVASCRIPT'],
     description: 'Mini Mart management and POS system with inventory tracking, barcode-ready products, low-stock alerts, cashier sales flow, analytics dashboard, and role-based store operations.',
-    image: '/page-sections/otherassets/basket.png',
+    image: 'page-sections/otherassets/basket.png',
     link: 'https://baskety-pos.onrender.com',
     hasImage: true,
     loginNote: 'Use username: admin password: admin123',
@@ -55,7 +55,7 @@ const projects = [
     titleAccent: 'Landing Page',
     tags: ['HTML', 'CSS', 'JavaScript', 'Framer Motion'],
     description: ' A simple yet highly interactive website built using HTML, CSS, and JavaScript, designed to showcase charity causes and advocacy campaigns in the Philippines through an engaging and user-friendly interface.',
-    image: '/page-sections/otherassets/karapatan.png',
+    image: 'page-sections/otherassets/karapatan.png',
     link: 'https://pauldl23.github.io/Website_Landing_Page/',
     hasImage: true,
   },
@@ -76,7 +76,7 @@ const projects = [
       email: 'johndoe',
       password: 'password123'
     },
-    image: '/page-sections/otherassets/handygear.png',
+    image: 'page-sections/otherassets/handygear.png',
     link: 'https://warehouse-inventory-system.great-site.net/login',
     hasImage: true,
   },
@@ -491,3 +491,4 @@ const Section6Projects = () => {
 };
 
 export default Section6Projects;
+

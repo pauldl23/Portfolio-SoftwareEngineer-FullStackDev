@@ -71,7 +71,7 @@ const Section5Skills = () => {
               <div className="skill-card-inner">
                 <div className="skill-icon-box">
                   <img 
-                    src={`/page-sections/section5/${skill.icon}`} 
+                    src={`page-sections/section5/${skill.icon}`} 
                     alt={skill.name} 
                     className="skill-svg-icon"
                   />
@@ -98,3 +98,4 @@ const Section5Skills = () => {
 };
 
 export default Section5Skills;
+

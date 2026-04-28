@@ -43,7 +43,7 @@ const HeroSection = () => {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <img 
-              src="/assets/13_profilephoto.png" 
+              src="assets/13_profilephoto.png" 
               alt="Paul" 
               className="main-portrait"
             />
@@ -55,7 +55,7 @@ const HeroSection = () => {
               transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
             >
               <div className="resume-badge">
-                <img src="/assets/8_eye.png" alt="eye" className="eye-icon" />
+                <img src="assets/8_eye.png" alt="eye" className="eye-icon" />
                 <svg viewBox="0 0 100 100" className="badge-svg">
                   <path id="circlePathHero" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
                   <text className="badge-text" fill="white">
@@ -79,3 +79,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

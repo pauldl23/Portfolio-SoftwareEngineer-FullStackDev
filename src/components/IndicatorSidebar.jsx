@@ -45,3 +45,4 @@ const IndicatorSidebar = ({ currentSection = 1, totalSections = 4 }) => {
 };
 
 export default IndicatorSidebar;
+

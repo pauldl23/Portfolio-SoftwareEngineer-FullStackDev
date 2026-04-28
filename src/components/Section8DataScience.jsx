@@ -9,7 +9,7 @@ const projects = [
     titleAccent: 'Intelligent Wait Time Modeling',
     tags: ['Python', 'Streamlit', 'Scikit-learn', 'Operational AI'],
     description: 'An enterprise-grade forecasting engine using Gradient Boosting to predict restaurant wait times and optimize staffing equilibrium based on real-time customer volume.',
-    image: '/page-sections/otherassets/waitstudio_preview.png',
+    image: 'page-sections/otherassets/waitstudio_preview.png',
     link: 'https://waiting-time-prediction-nbqxgs2btfgwpjntuvjappv.streamlit.app/',
     hasImage: true,
     colorAccent: '#00D1FF',
@@ -21,7 +21,7 @@ const projects = [
     titleAccent: 'Clinical Intelligence Platform',
     tags: ['Python', 'Streamlit', 'ML Engine', 'Clinical AI'],
     description: 'VisionStudio v2.4.0-Alpha is a high-performance clinical intelligence platform for eye health. It features a serialized ML Engine (92.4% accuracy) with 1.2ms latency, tracking real-time KPIs like Eye Health Index (84.6) and Ocular Drift (0.02%) via a diagnostic wavefront dashboard.',
-    image: '/page-sections/otherassets/visionstudio_preview.png',
+    image: 'page-sections/otherassets/visionstudio_preview.png',
     link: 'https://visionstudio-vygpmccxqgkzmywwkvf5ws.streamlit.app/',
     hasImage: true,
     colorAccent: '#B9FF29',
@@ -344,3 +344,4 @@ const Section8DataScience = () => {
 };
 
 export default Section8DataScience;
+

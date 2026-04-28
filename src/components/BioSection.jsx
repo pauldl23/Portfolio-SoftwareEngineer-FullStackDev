@@ -13,8 +13,8 @@ const BioSection = () => {
               whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              <img src="/assets/11_nature.png" alt="nature" className="bio-frame-bg" />
-              <img src="/assets/13_profilephoto.png" alt="Paul" className="bio-portrait" />
+              <img src="assets/11_nature.png" alt="nature" className="bio-frame-bg" />
+              <img src="assets/13_profilephoto.png" alt="Paul" className="bio-portrait" />
 
               <motion.div
                 className="diagonal-lime-strip"
@@ -28,7 +28,7 @@ const BioSection = () => {
               </motion.div>
             </motion.div>
 
-            <img src="/assets/9_white_stamp.png" alt="stamp" className="floating-stamp" />
+            <img src="assets/9_white_stamp.png" alt="stamp" className="floating-stamp" />
             <div className="frame-focus-outline"></div>
           </div>
         </div>
@@ -75,3 +75,4 @@ const BioSection = () => {
 };
 
 export default BioSection;
+

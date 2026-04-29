@@ -94,7 +94,7 @@ const Section9Contact = () => {
 
         {/* RIGHT COLUMN (Form) */}
         <div className="contact-right-col">
-          <form action="https://formspree.io/pauldeleon2303@gmail.com" method="POST" className="contact-form">
+          <form action="https://formspree.io/f/mnjlebne" method="POST" className="contact-form">
 
             <motion.div className="form-step-group" custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
               <div className="step-indicator active">01</div>

@@ -2577,6 +2577,55 @@ body {
 .contact-right-col {
   width: 100%;
   position: relative;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-success-screen {
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.success-icon-wrap {
+  margin-bottom: 24px;
+}
+
+.success-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--text-main);
+}
+
+.success-text {
+  font-size: 16px;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.back-btn-premium {
+  padding: 12px 30px;
+  background: var(--accent-lime);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(186, 255, 41, 0.2);
 }
 
 .contact-form {

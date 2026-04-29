@@ -1,5 +1,4 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import { useForm, ValidationError } from '@formspree/react';
 
 /* Reveal animation variants */
 const fadeInUp = {
@@ -12,6 +11,8 @@ const fadeInUp = {
 };
 
 const Section9Contact = () => {
+  const [state, handleSubmit] = useForm('mnjlebne');
+
   return (
     <section className="contact-section">
       {/* Background Map Texture Overlay */}
@@ -94,48 +95,71 @@ const Section9Contact = () => {
 
         {/* RIGHT COLUMN (Form) */}
         <div className="contact-right-col">
-          <form action="https://formspree.io/f/mnjlebne" method="POST" className="contact-form">
-
-            <motion.div className="form-step-group" custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <div className="step-indicator active">01</div>
-              <div className="form-input-wrap">
-                <label>What's your name?</label>
-                <input type="text" name="name" placeholder="Type your full name" className="premium-input" required />
+          {state.succeeded ? (
+            <motion.div 
+              className="form-success-screen"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <div className="success-icon-wrap">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--accent-lime)" strokeWidth="2">
+                  <path d="M20 6L9 17L4 12" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </div>
-            </motion.div>
-
-            <motion.div className="form-step-group" custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <div className="step-indicator">02</div>
-              <div className="form-input-wrap">
-                <label>What's your email address?</label>
-                <input type="email" name="email" placeholder="example@gmail.com" className="premium-input" required />
-              </div>
-            </motion.div>
-
-            <motion.div className="form-step-group" custom={3} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <div className="step-indicator">03</div>
-              <div className="form-input-wrap">
-                <label>What service are you looking for?</label>
-                <input type="text" name="service" placeholder="Web Design, Web Development ..." className="premium-input" />
-              </div>
-            </motion.div>
-
-            <motion.div className="form-step-group" custom={4} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <div className="step-indicator">04</div>
-              <div className="form-input-wrap">
-                <label>Your message</label>
-                <input type="text" name="message" placeholder="Hello Paul, can you help me with ..." className="premium-input border-last" required />
-              </div>
-            </motion.div>
-
-            <motion.div className="form-submit-wrap" custom={5} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-              <button type="submit" className="submit-message-btn">
-                SEND MESSAGE
-                <span className="btn-dot-marker-dark"></span>
+              <h3 className="success-title">Message Sent Successfully!</h3>
+              <p className="success-text">Thank you for reaching out, Paul. I will get back to you shortly.</p>
+              <button onClick={() => window.location.reload()} className="back-btn-premium">
+                SEND ANOTHER MESSAGE
               </button>
             </motion.div>
+          ) : (
+            <form onSubmit={handleSubmit} className="contact-form">
 
-          </form>
+              <motion.div className="form-step-group" custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                <div className="step-indicator active">01</div>
+                <div className="form-input-wrap">
+                  <label htmlFor="name">What's your name?</label>
+                  <input id="name" type="text" name="name" placeholder="Type your full name" className="premium-input" required />
+                  <ValidationError prefix="Name" field="name" errors={state.errors} />
+                </div>
+              </motion.div>
+
+              <motion.div className="form-step-group" custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                <div className="step-indicator">02</div>
+                <div className="form-input-wrap">
+                  <label htmlFor="email">What's your email address?</label>
+                  <input id="email" type="email" name="email" placeholder="example@gmail.com" className="premium-input" required />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
+                </div>
+              </motion.div>
+
+              <motion.div className="form-step-group" custom={3} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                <div className="step-indicator">03</div>
+                <div className="form-input-wrap">
+                  <label htmlFor="service">What service are you looking for?</label>
+                  <input id="service" type="text" name="service" placeholder="Web Design, Web Development ..." className="premium-input" />
+                  <ValidationError prefix="Service" field="service" errors={state.errors} />
+                </div>
+              </motion.div>
+
+              <motion.div className="form-step-group" custom={4} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                <div className="step-indicator">04</div>
+                <div className="form-input-wrap">
+                  <label htmlFor="message">Your message</label>
+                  <input id="message" type="text" name="message" placeholder="Hello Paul, can you help me with ..." className="premium-input border-last" required />
+                  <ValidationError prefix="Message" field="message" errors={state.errors} />
+                </div>
+              </motion.div>
+
+              <motion.div className="form-submit-wrap" custom={5} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                <button type="submit" disabled={state.submitting} className="submit-message-btn">
+                  {state.submitting ? 'SENDING...' : 'SEND MESSAGE'}
+                  <span className="btn-dot-marker-dark"></span>
+                </button>
+              </motion.div>
+
+            </form>
+          )}
         </div>
       </div>
     </section>

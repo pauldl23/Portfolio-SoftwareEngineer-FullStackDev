@@ -19,7 +19,9 @@ const SocialSidebar = () => {
 
       <div className="sidebar-middle">
         <motion.a 
-          href="#facebook" 
+          href="https://www.facebook.com/pollcadiz.deleon" 
+          target="_blank"
+          rel="noopener noreferrer"
           className="social-link active-link"
           whileHover={{ color: 'var(--accent-lime)' }}
         >

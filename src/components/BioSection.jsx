@@ -28,7 +28,7 @@ const BioSection = () => {
               </motion.div>
             </motion.div>
 
-            <img src="assets/9_white_stamp.png" alt="stamp" className="floating-stamp" />
+
             <div className="frame-focus-outline"></div>
           </div>
         </div>

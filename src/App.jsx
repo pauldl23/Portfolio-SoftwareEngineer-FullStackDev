@@ -93,10 +93,10 @@ function App() {
           <Section6Projects />
         </div>
         <div className="section-wrapper" data-section="7">
-          <Section7Video />
+          <Section8DataScience />
         </div>
         <div className="section-wrapper" data-section="8">
-          <Section8DataScience />
+          <Section7Video />
         </div>
         <div className="section-wrapper" data-section="9">
           <Section9Contact />

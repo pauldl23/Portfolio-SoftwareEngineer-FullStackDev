@@ -3,6 +3,18 @@ import { motion } from 'framer-motion';
 
 const experiences = [
   {
+    id: 4,
+    year: "2026",
+    role: "Full Stack Developer",
+    company: "FREELANCE"
+  },
+  {
+    id: 3,
+    year: "2025",
+    role: "Assistant End-user Support",
+    company: "UBIQUITY GLOBAL SERVICES"
+  },
+  {
     id: 1,
     year: "2024-PRESENT",
     role: "Video Editor",
@@ -13,18 +25,6 @@ const experiences = [
     year: "2024-PRESENT",
     role: "Video Editor",
     company: "COACHTUBE"
-  },
-  {
-    id: 3,
-    year: "2025",
-    role: "Assistant End-user Support",
-    company: "UBIQUITY GLOBAL SERVICES"
-  },
-  {
-    id: 4,
-    year: "2026",
-    role: "Full Stack Developer",
-    company: "FREELANCE"
   }
 ];
 

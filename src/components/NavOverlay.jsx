@@ -19,8 +19,8 @@ const NavOverlay = ({ isOpen, onClose, activeSection, onNavigate }) => {
       className="nav-overlay-container"
       initial={{ x: '-100%' }}
       animate={{ x: 0 }}
-      exit={{ x: '-100%' }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+      exit={{ x: '-100%', transition: { duration: 0.3, ease: "easeIn" } }}
     >
       <div className="nav-menu-content">
         <div className="nav-links-list">

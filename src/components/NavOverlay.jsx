@@ -7,7 +7,7 @@ const menuItems = [
   { name: 'Services', section: 3 },
   { name: 'Experience', section: 4 },
   { name: 'Skills', section: 5 },
-  { name: 'Projects', section: 6 },
+  { name: 'Developments', section: 6 },
   { name: 'Data Science', section: 7 },
   { name: 'Video Editing', section: 8 },
   { name: 'Contact', section: 9 },
@@ -15,7 +15,7 @@ const menuItems = [
 
 const NavOverlay = ({ isOpen, onClose, activeSection, onNavigate }) => {
   return (
-    <motion.div 
+    <motion.div
       className="nav-overlay-container"
       initial={{ x: '-100%' }}
       animate={{ x: 0 }}
@@ -52,7 +52,7 @@ const NavOverlay = ({ isOpen, onClose, activeSection, onNavigate }) => {
       </div>
 
       {/* Close Button */}
-      <motion.button 
+      <motion.button
         className="nav-close-pill"
         onClick={onClose}
         initial={{ opacity: 0, scale: 0.8 }}

@@ -2843,7 +2843,7 @@ body {
 .nav-close-pill {
   position: absolute;
   top: 50%;
-  right: -30px;
+  right: -80px;
   transform: translateY(-50%);
   background: var(--accent-lime);
   color: #000;

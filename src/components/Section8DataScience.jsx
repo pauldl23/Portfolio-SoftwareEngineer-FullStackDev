@@ -70,18 +70,24 @@ const Section8DataScience = () => {
   const [direction, setDirection] = useState(0);
 
   const goToNext = useCallback(() => {
-    if (currentIndex < projects.length - 1) {
-      setDirection(1);
-      setCurrentIndex((prev) => prev + 1);
-    }
-  }, [currentIndex]);
+    setCurrentIndex((prev) => {
+      if (prev < projects.length - 1) {
+        return prev + 1;
+      }
+      return prev;
+    });
+    setDirection(1);
+  }, []);
 
   const goToPrev = useCallback(() => {
-    if (currentIndex > 0) {
-      setDirection(-1);
-      setCurrentIndex((prev) => prev - 1);
-    }
-  }, [currentIndex]);
+    setCurrentIndex((prev) => {
+      if (prev > 0) {
+        return prev - 1;
+      }
+      return prev;
+    });
+    setDirection(-1);
+  }, []);
 
   const goToSlide = useCallback((i) => {
     setDirection(i > currentIndex ? 1 : -1);

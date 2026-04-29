@@ -18,8 +18,8 @@ const projects = [
     num: '02',
     title: 'Visual\n',
     titleAccent: 'Ad Campaign',
-    tags: ['CapCut', 'Short-form Content', 'Reels / Ads'],
-    description: 'A series of viral-optimized short-form advertisements designed for TikTok and Instagram Reels, utilizing trending audio, fast-paced cuts, and engaging subtitles to maximize viewer retention.',
+    tags: ['Ad', 'Premiere Pro', 'After Effects'],
+    description: 'Produced a promotional advertisement for the Coachtube website and its latest platform upgrade, highlighting new features and enhancements. Led the creative direction, scripting, and execution, incorporating motion graphics to deliver an engaging and informative visual experience.',
     video: 'https://drive.google.com/file/d/1zapH6vJ1WSihRytjNY7v0w8RR63okmPd/preview',
     link: '#',
     hasVideo: true,
@@ -27,10 +27,10 @@ const projects = [
   {
     id: 3,
     num: '03',
-    title: 'Documentary\n',
-    titleAccent: 'Mini-Series',
-    tags: ['Premiere Pro', 'Audio Mixing', 'Storytelling'],
-    description: 'A compelling documentary mini-series focusing on independent artists. The project involved multi-cam editing, extensive audio mixing, and narrative pacing to create an immersive storytelling experience.',
+    title: 'Short-Form\n',
+    titleAccent: 'Content',
+    tags: ['CapCut', 'Short-form Content', 'Reels / Ads'],
+    description: 'Created and edited high-impact short-form videos for LinkedIn, integrating motion graphics, captions, and engaging visual elements to improve audience engagement and content performance.',
     video: 'https://drive.google.com/file/d/1-QLPmem2ciLR-417ENGu3TKjm8NFQZJu/preview',
     link: '#',
     hasVideo: true,
@@ -38,10 +38,10 @@ const projects = [
   {
     id: 4,
     num: '04',
-    title: 'Motion\n',
-    titleAccent: 'Graphics',
+    title: 'Podcast\n',
+    titleAccent: 'Edit',
     tags: ['After Effects', 'Keyframing', 'Visual FX'],
-    description: 'A sophisticated motion graphics project featuring intricate animations, fluid transitions, and synchronized visual effects for a specialized technical demonstration.',
+    description: 'A polished motion graphics project for a two-person podcast, featuring dynamic split-screen layouts, speaker-focused framing, and seamless transitions. Utilized advanced keyframing, synchronized visual effects, and animated overlays to enhance clarity, engagement, and conversational flow.',
     video: 'https://drive.google.com/file/d/1y_n0A3AGZeDgt5fYNYJdt7F8-PHBl3Pd/preview',
     link: '#',
     hasVideo: true,
@@ -92,20 +92,26 @@ const Section7Video = () => {
   const videoRef = useRef(null);
 
   const goToNext = useCallback(() => {
-    if (currentIndex < projects.length - 1) {
-      setDirection(1);
-      setCurrentIndex((prev) => prev + 1);
-      setIsPlaying(false);
-    }
-  }, [currentIndex]);
+    setCurrentIndex((prev) => {
+      if (prev < projects.length - 1) {
+        return prev + 1;
+      }
+      return prev;
+    });
+    setDirection(1);
+    setIsPlaying(false);
+  }, []);
 
   const goToPrev = useCallback(() => {
-    if (currentIndex > 0) {
-      setDirection(-1);
-      setCurrentIndex((prev) => prev - 1);
-      setIsPlaying(false);
-    }
-  }, [currentIndex]);
+    setCurrentIndex((prev) => {
+      if (prev > 0) {
+        return prev - 1;
+      }
+      return prev;
+    });
+    setDirection(-1);
+    setIsPlaying(false);
+  }, []);
 
   const goToSlide = useCallback((i) => {
     setDirection(i > currentIndex ? 1 : -1);
@@ -144,7 +150,7 @@ const Section7Video = () => {
           </div>
 
           {/* Centered Section Title */}
-          <motion.div 
+          <motion.div
             className="proj-section-main-title"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -269,7 +275,7 @@ const Section7Video = () => {
                                 </svg>
                               </div>
                             </div>
-                            
+
                             <div className="play-button-overlay" onClick={togglePlay}>
                               <div className="play-icon-circle">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">

@@ -14,7 +14,7 @@ const BioSection = () => {
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             >
               <img src="assets/11_nature.png" alt="nature" className="bio-frame-bg" />
-              <img src="assets/13_profilephoto.png" alt="Paul" className="bio-portrait" />
+              <img src="page-sections/otherassets/profile2.png" alt="Paul" className="bio-portrait" />
 
               <motion.div
                 className="diagonal-lime-strip"

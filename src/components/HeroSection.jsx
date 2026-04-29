@@ -61,7 +61,7 @@ const HeroSection = () => {
                 <img src="assets/8_eye.png" alt="eye" className="eye-icon" />
                 <svg viewBox="0 0 100 100" className="badge-svg">
                   <path id="circlePathHero" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
-                  <text className="badge-text" fill="white">
+                  <text className="badge-text">
                     <textPath xlinkHref="#circlePathHero">
                       • WATCH MY RESUME • WATCH MY RESUME 
                     </textPath>

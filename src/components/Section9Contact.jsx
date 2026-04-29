@@ -94,13 +94,13 @@ const Section9Contact = () => {
 
         {/* RIGHT COLUMN (Form) */}
         <div className="contact-right-col">
-          <form className="contact-form">
+          <form action="https://formspree.io/pauldeleon2303@gmail.com" method="POST" className="contact-form">
 
             <motion.div className="form-step-group" custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
               <div className="step-indicator active">01</div>
               <div className="form-input-wrap">
                 <label>What's your name?</label>
-                <input type="text" placeholder="Type your full name" className="premium-input" />
+                <input type="text" name="name" placeholder="Type your full name" className="premium-input" required />
               </div>
             </motion.div>
 
@@ -108,15 +108,15 @@ const Section9Contact = () => {
               <div className="step-indicator">02</div>
               <div className="form-input-wrap">
                 <label>What's your email address?</label>
-                <input type="email" placeholder="example@gmail.com" className="premium-input" />
+                <input type="email" name="email" placeholder="example@gmail.com" className="premium-input" required />
               </div>
             </motion.div>
 
             <motion.div className="form-step-group" custom={3} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
               <div className="step-indicator">03</div>
               <div className="form-input-wrap">
-                <label>What's service are you looking for?</label>
-                <input type="text" placeholder="Web Design, Web Development ..." className="premium-input" />
+                <label>What service are you looking for?</label>
+                <input type="text" name="service" placeholder="Web Design, Web Development ..." className="premium-input" />
               </div>
             </motion.div>
 
@@ -124,7 +124,7 @@ const Section9Contact = () => {
               <div className="step-indicator">04</div>
               <div className="form-input-wrap">
                 <label>Your message</label>
-                <input type="text" placeholder="Hello Paul, can you help me with ..." className="premium-input border-last" />
+                <input type="text" name="message" placeholder="Hello Paul, can you help me with ..." className="premium-input border-last" required />
               </div>
             </motion.div>
 

@@ -46,7 +46,7 @@ const SocialSidebar = ({ onMenuOpen }) => {
           <svg className="arrow-icon" width="30" height="24" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2 12H28M28 12L20 4M28 12L20 20" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-          <span className="skills-text">MENU</span>
+          <span className="skills-text">05_SKILLS</span>
         </motion.div>
       </div>
     </aside>

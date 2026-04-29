@@ -14,8 +14,6 @@ const menuItems = [
 ];
 
 const NavOverlay = ({ isOpen, onClose, activeSection, onNavigate }) => {
-  if (!isOpen) return null;
-
   return (
     <motion.div 
       className="nav-overlay-container"

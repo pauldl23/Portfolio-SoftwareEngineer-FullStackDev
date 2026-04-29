@@ -86,6 +86,7 @@ function App() {
       <AnimatePresence>
         {isNavOpen && (
           <NavOverlay 
+            key="nav-overlay"
             isOpen={isNavOpen} 
             onClose={() => setIsNavOpen(false)} 
             activeSection={activeSection}
@@ -130,7 +131,7 @@ function App() {
       </div>
 
       <div className="ui-overlay footer-wrap">
-        <FooterControls />
+        <FooterControls onMenuOpen={() => setIsNavOpen(true)} />
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import icon3 from '../../page-sections/section3-svg/8_icon.svg';
 const services = [
   {
     id: "s2",
-    ornament: "CODE • WEB",
+    ornament: "CODE • WEB • SYSTEMS",
     icon: icon2,
     title: "Full Stack Development",
     desc: "Building responsive, scalable, and high-performance web applications with clean architecture and seamless user experience."
@@ -35,7 +35,7 @@ const Section3Services = () => {
     <section className="services-section">
       <div className="services-container">
         <header className="services-header">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -48,7 +48,7 @@ const Section3Services = () => {
             </h2>
           </motion.div>
 
-          <motion.button 
+          <motion.button
             className="more-services-pill"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -66,14 +66,14 @@ const Section3Services = () => {
 
         <div className="services-grid">
           {services.map((service, index) => (
-            <motion.div 
+            <motion.div
               key={service.id}
               className="glass-service-card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              
+
               <div className="card-top-row">
                 <div className="card-icon-wrap">
                   <img src={service.icon} alt={service.title} className="service-icon-img" />

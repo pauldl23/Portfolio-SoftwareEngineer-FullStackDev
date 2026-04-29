@@ -12,9 +12,12 @@ import Section6Projects from './components/Section6Projects';
 import Section7Video from './components/Section7Video';
 import Section8DataScience from './components/Section8DataScience';
 import Section9Contact from './components/Section9Contact';
+import NavOverlay from './components/NavOverlay';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
   const [activeSection, setActiveSection] = useState(1);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const scrollContainerRef = useRef(null);
 
@@ -50,8 +53,15 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  const handleNavigate = (sectionNum) => {
+    const sectionElement = document.querySelector(`[data-section="${sectionNum}"]`);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="app-container">
+    <div className={`app-container ${isNavOpen ? 'nav-open' : ''}`}>
       <div className="grain-overlay"></div>
       
       {/* Dynamic Cursor Glow */}
@@ -70,10 +80,21 @@ function App() {
       </div>
 
       <div className="ui-overlay sidebar-left-wrap">
-        <SocialSidebar />
+        <SocialSidebar onMenuOpen={() => setIsNavOpen(true)} />
       </div>
 
-      <main className="scroll-container" ref={scrollContainerRef}>
+      <AnimatePresence>
+        {isNavOpen && (
+          <NavOverlay 
+            isOpen={isNavOpen} 
+            onClose={() => setIsNavOpen(false)} 
+            activeSection={activeSection}
+            onNavigate={handleNavigate}
+          />
+        )}
+      </AnimatePresence>
+
+      <main className={`scroll-container ${isNavOpen ? 'blurred-content' : ''}`} ref={scrollContainerRef}>
         <div className="section-wrapper" data-section="1">
           <HeroSection />
         </div>
@@ -107,7 +128,6 @@ function App() {
       <div className="ui-overlay sidebar-right-wrap">
         <IndicatorSidebar currentSection={activeSection} totalSections={9} />
       </div>
-
 
       <div className="ui-overlay footer-wrap">
         <FooterControls />

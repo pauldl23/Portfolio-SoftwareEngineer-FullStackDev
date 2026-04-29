@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const SocialSidebar = () => {
+const SocialSidebar = ({ onMenuOpen }) => {
   return (
     <aside className="sidebar sidebar-left">
       <div className="sidebar-top">
@@ -40,11 +40,13 @@ const SocialSidebar = () => {
         <motion.div 
           className="skills-square"
           whileHover={{ scale: 1.05 }}
+          onClick={onMenuOpen}
+          style={{ cursor: 'pointer' }}
         >
           <svg className="arrow-icon" width="30" height="24" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2 12H28M28 12L20 4M28 12L20 20" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-          <span className="skills-text">05_SKILLS</span>
+          <span className="skills-text">MENU</span>
         </motion.div>
       </div>
     </aside>

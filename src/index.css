@@ -2749,3 +2749,120 @@ body {
     top: 50px;
   }
 }
+
+/* ================= NAV OVERLAY ================= */
+.nav-overlay-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px;
+  max-width: 90vw;
+  height: 100vh;
+  background-color: #111;
+  z-index: 1000;
+  display: flex;
+  box-shadow: 20px 0 50px rgba(0, 0, 0, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-menu-content {
+  flex: 1;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.nav-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.nav-menu-item {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: left;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  padding: 0;
+}
+
+.nav-menu-item:hover {
+  color: var(--accent-lime);
+  transform: translateX(10px);
+}
+
+.nav-menu-item.active {
+  color: var(--accent-lime);
+}
+
+.nav-item-star {
+  font-size: 20px;
+  color: var(--accent-lime);
+}
+
+.nav-vertical-ribbon {
+  width: 40px;
+  background-color: var(--accent-lime);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.ribbon-marquee {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  animation: scrollY 15s linear infinite;
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+@keyframes scrollY {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.nav-close-pill {
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+  background: var(--accent-lime);
+  color: #000;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 16px;
+  font-weight: 800;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Blur effect for main content */
+.blurred-content {
+  filter: blur(15px);
+  pointer-events: none;
+}
+
+.scroll-container {
+  transition: filter 0.8s ease;
+}

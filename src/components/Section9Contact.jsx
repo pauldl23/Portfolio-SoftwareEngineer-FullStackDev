@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
 
@@ -13,6 +14,7 @@ const fadeInUp = {
 
 const Section9Contact = () => {
   const [state, handleSubmit] = useForm('mnjlebne');
+  const [activeStep, setActiveStep] = useState(1);
 
   return (
     <section className="contact-section">
@@ -48,7 +50,7 @@ const Section9Contact = () => {
               <div className="detail-label">
                 <span className="detail-star">✦</span> PHONE
               </div>
-              <p className="detail-value">+7 (921) 125-14-16</p>
+              <p className="detail-value">+63 916 436 7516</p>
             </motion.div>
 
             <motion.div
@@ -58,7 +60,7 @@ const Section9Contact = () => {
               <div className="detail-label">
                 <span className="detail-star">✦</span> ADDRESS
               </div>
-              <p className="detail-value">875 Alderwood St.San Pedro, CA 90731</p>
+              <p className="detail-value">Bacolod City, Negros Occidental 6100, Philippines</p>
             </motion.div>
           </div>
 
@@ -97,7 +99,7 @@ const Section9Contact = () => {
         {/* RIGHT COLUMN (Form) */}
         <div className="contact-right-col">
           {state.succeeded ? (
-            <motion.div 
+            <motion.div
               className="form-success-screen"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -117,37 +119,68 @@ const Section9Contact = () => {
             <form onSubmit={handleSubmit} className="contact-form">
 
               <motion.div className="form-step-group" custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-                <div className="step-indicator active">01</div>
+                <div className={`step-indicator ${activeStep === 1 ? 'active' : ''}`}>01</div>
                 <div className="form-input-wrap">
                   <label htmlFor="name">What's your name?</label>
-                  <input id="name" type="text" name="name" placeholder="Type your full name" className="premium-input" required />
+                  <input 
+                    id="name" 
+                    type="text" 
+                    name="name" 
+                    placeholder="Type your full name" 
+                    className="premium-input" 
+                    required 
+                    onFocus={() => setActiveStep(1)}
+                  />
                   <ValidationError prefix="Name" field="name" errors={state.errors} />
                 </div>
               </motion.div>
 
               <motion.div className="form-step-group" custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-                <div className="step-indicator">02</div>
+                <div className={`step-indicator ${activeStep === 2 ? 'active' : ''}`}>02</div>
                 <div className="form-input-wrap">
                   <label htmlFor="email">What's your email address?</label>
-                  <input id="email" type="email" name="email" placeholder="example@gmail.com" className="premium-input" required />
+                  <input 
+                    id="email" 
+                    type="email" 
+                    name="email" 
+                    placeholder="example@gmail.com" 
+                    className="premium-input" 
+                    required 
+                    onFocus={() => setActiveStep(2)}
+                  />
                   <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
               </motion.div>
 
               <motion.div className="form-step-group" custom={3} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-                <div className="step-indicator">03</div>
+                <div className={`step-indicator ${activeStep === 3 ? 'active' : ''}`}>03</div>
                 <div className="form-input-wrap">
                   <label htmlFor="service">What service are you looking for?</label>
-                  <input id="service" type="text" name="service" placeholder="Web Design, Web Development ..." className="premium-input" />
+                  <input 
+                    id="service" 
+                    type="text" 
+                    name="service" 
+                    placeholder="Web Design, Web Development ..." 
+                    className="premium-input" 
+                    onFocus={() => setActiveStep(3)}
+                  />
                   <ValidationError prefix="Service" field="service" errors={state.errors} />
                 </div>
               </motion.div>
 
               <motion.div className="form-step-group" custom={4} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-                <div className="step-indicator">04</div>
+                <div className={`step-indicator ${activeStep === 4 ? 'active' : ''}`}>04</div>
                 <div className="form-input-wrap">
                   <label htmlFor="message">Your message</label>
-                  <input id="message" type="text" name="message" placeholder="Hello Paul, can you help me with ..." className="premium-input border-last" required />
+                  <input 
+                    id="message" 
+                    type="text" 
+                    name="message" 
+                    placeholder="Hello Paul, can you help me with ..." 
+                    className="premium-input border-last" 
+                    required 
+                    onFocus={() => setActiveStep(4)}
+                  />
                   <ValidationError prefix="Message" field="message" errors={state.errors} />
                 </div>
               </motion.div>

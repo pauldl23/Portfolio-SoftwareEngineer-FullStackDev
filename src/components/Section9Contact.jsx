@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
 
 /* Reveal animation variants */

@@ -8,13 +8,6 @@ import icon3 from '../../page-sections/section3-svg/8_icon.svg';
 
 const services = [
   {
-    id: "s1",
-    ornament: "VIDEO • MOTION",
-    icon: icon1,
-    title: "Video Editing & Motion",
-    desc: "From short-form reels to cinematic edits, promos, and branded content designed for engagement and storytelling."
-  },
-  {
     id: "s2",
     ornament: "CODE • WEB",
     icon: icon2,
@@ -27,6 +20,13 @@ const services = [
     icon: icon3,
     title: "Data Analysis & Insights",
     desc: "Transforming raw data into clear dashboards, reports, and actionable insights for smarter business decisions."
+  },
+  {
+    id: "s1",
+    ornament: "VIDEO • MOTION",
+    icon: icon1,
+    title: "Video Editing & Motion",
+    desc: "From short-form reels to cinematic edits, promos, and branded content designed for engagement and storytelling."
   }
 ];
 

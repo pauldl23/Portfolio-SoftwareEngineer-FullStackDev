@@ -9,7 +9,7 @@ const skills = [
   { id: '05', name: 'REACT', icon: '104_vector.svg', category: 'Frontend Specialist' },
   { id: '06', name: 'NODE.JS', icon: '113_vector.svg', category: 'Runtime Environment' },
   { id: '07', name: 'CSS & HTML', icon: '10_vector.svg', category: 'Layout & Design' },
-  { id: '08', name: 'FIREBASE', icon: '117_vector.svg', category: 'Cloud Infrastructure' },
+  { id: '08', name: 'SUPABASE', icon: 'supabase.png', category: 'Open-source Postgres Backend' },
   { id: '09', name: 'POSTGRESQL', icon: '114_vector.svg', category: 'Database Management' },
   { id: '10', name: 'DOCKER', icon: '115_vector.svg', category: 'Containerization' },
   { id: '11', name: 'FIGMA', icon: 'figma.png', category: 'FrontEnd Design/Prototype' },

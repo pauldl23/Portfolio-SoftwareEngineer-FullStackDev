@@ -13,7 +13,7 @@ const BioSection = () => {
               whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              <img src="assets/11_nature.png" alt="nature" className="bio-frame-bg" />
+              <img src="assets/section2/25_bg.png" alt="nature" className="bio-frame-bg" />
               <img src="page-sections/otherassets/profile2.png" alt="Paul" className="bio-portrait" />
 
               <motion.div

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const experiences = [
   {
     id: 4,
-    year: "2026-Present",
+    year: "2025-Present",
     role: "Full Stack Developer",
     company: "FREELANCE"
   },

@@ -13,8 +13,8 @@ const HeroSection = () => {
         >
           <div className="hero-greeting">HI I'M PAUL —</div>
           <h1 className="hero-title">
-            A Digital <br />
-            Solutions Specialist, <br />
+            A Digital <br className="mobile-hide" />
+            Solutions Specialist, <br className="mobile-hide" />
             Based in <span className="neon-text">Philippines.</span>
           </h1>
 

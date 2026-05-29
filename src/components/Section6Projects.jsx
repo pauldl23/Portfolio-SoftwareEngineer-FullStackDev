@@ -44,7 +44,7 @@ const projects = [
     tags: ['DJANGO', 'SUPABASE', 'POS', 'INVENTORY', 'TAILWIND', 'HTML', 'JAVASCRIPT'],
     description: 'Mini Mart management and POS system with inventory tracking, barcode-ready products, low-stock alerts, cashier sales flow, analytics dashboard, and role-based store operations.',
     image: 'page-sections/otherassets/basket.png',
-    link: 'https://baskety-pos.onrender.com',
+    link: 'https://baskety-pos-u1ml.onrender.com/login/',
     hasImage: true,
     loginNote: 'Use username: admin password: admin123',
   },

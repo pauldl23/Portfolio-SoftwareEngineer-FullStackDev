@@ -803,6 +803,8 @@ body {
   object-fit: cover;
   object-position: center top;
   z-index: 3;
+  transform: scale(1.1);
+  transform-origin: center top;
 }
 
 .diagonal-lime-strip {

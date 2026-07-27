@@ -31,7 +31,7 @@ const projects = [
     titleAccent: 'Content',
     tags: ['CapCut', 'Short-form Content', 'Reels / Ads'],
     description: 'Created and edited high-impact short-form videos for LinkedIn and other Social Media Platforms, integrating motion graphics, captions, and engaging visual elements to improve audience engagement and content performance.',
-    video: 'https://drive.google.com/file/d/1gXDJBuRbiSfkMshrGlKKJnHXta3UmFUd/view?usp=sharing',
+    video: 'https://drive.google.com/file/d/1gXDJBuRbiSfkMshrGlKKJnHXta3UmFUd/preview',
     link: '#',
     hasVideo: true,
   },

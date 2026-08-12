@@ -26,6 +26,18 @@ const projects = [
     hasImage: true,
     colorAccent: '#B9FF29',
   },
+  {
+    id: 3,
+    num: '03',
+    title: 'ServiceMetrics |\n',
+    titleAccent: 'Call Center Analytics Dashboard',
+    tags: ['SQL', 'POWER BI', 'EXCEL', 'DATA ANALYTICS'],
+    description: 'ServiceMetrics v2.0 is a comprehensive operational analytics dashboard for customer service centers. It features automated ETL pipelines processing over 500k+ monthly call logs, tracking real-time KPIs like Customer Satisfaction (CSAT 8.9/10) and Call Abandonment Rate (2.3%) via an interactive executive dashboard.',
+    image: 'page-sections/otherassets/call-center-data-analysis.png',
+    link: 'https://callcenter-data-analysis-m4xmnydcminlniyuxbckfm.streamlit.app/',
+    hasImage: true,
+    colorAccent: '#FF9F29',
+  },
 ];
 
 /* Slide container transition */

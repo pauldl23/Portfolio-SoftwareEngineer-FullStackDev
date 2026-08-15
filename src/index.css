@@ -542,6 +542,10 @@ body {
   .portrait-frame {
     width: 100%;
     max-width: 300px;
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 
@@ -2755,6 +2759,14 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Issue 1: Safe mobile padding on the section and slide */
+  .projects-section {
+    padding: 0 20px;
+  }
+  .project-slide {
+    padding: 10px 0;
+  }
+
   .project-title {
     font-size: clamp(24px, 8vw, 32px);
   }
@@ -2762,6 +2774,36 @@ body {
     font-size: 13px;
     max-width: 100%;
   }
+
+  /* Issue 2: Button wraps tightly around its text, centered */
+  .project-cta-area {
+    flex-direction: column;
+    align-items: center;
+  }
+  .view-project-btn-premium {
+    width: fit-content;
+    max-width: max-content;
+    align-self: center;
+  }
+
+  /* Issue 3: Clean tag spacing with flexbox gap */
+  .proj-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Issue 4: Project images scale to container width safely */
+  .project-screenshot {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  .project-image-wrap {
+    aspect-ratio: auto;
+  }
+
   .proj-bottom-controls {
     flex-direction: column;
     gap: 20px;

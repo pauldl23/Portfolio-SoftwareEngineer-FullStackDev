@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { fastTransition } from '../utils/animations';
 
 const HeroSection = () => {
   return (
@@ -9,7 +10,8 @@ const HeroSection = () => {
           className="hero-text-block"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={fastTransition}
         >
           <div className="hero-greeting">HI I'M PAUL —</div>
           <h1 className="hero-title">
@@ -40,12 +42,15 @@ const HeroSection = () => {
             className="portrait-frame"
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={fastTransition}
           >
             <img 
               src="assets/13_profilephoto.png" 
               alt="Paul" 
               className="main-portrait"
+              loading="eager"
+              fetchpriority="high"
             />
             
             <motion.a 
@@ -58,7 +63,7 @@ const HeroSection = () => {
               transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
             >
               <div className="resume-badge">
-                <img src="assets/8_eye.png" alt="eye" className="eye-icon" />
+                <img src="assets/8_eye.png" alt="eye" className="eye-icon" loading="lazy" decoding="async" />
                 <svg viewBox="0 0 100 100" className="badge-svg">
                   <path id="circlePathHero" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
                   <text className="badge-text">

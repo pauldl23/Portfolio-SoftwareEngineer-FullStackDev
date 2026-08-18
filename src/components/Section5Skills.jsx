@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { fastTransition } from '../utils/animations';
 
 const skills = [
   { id: '01', name: 'PYTHON', icon: '101_image_1.svg', category: 'Backend Development' },
@@ -31,7 +32,8 @@ const Section5Skills = () => {
             className="skills-header-block"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={fastTransition}
           >
             <div className="skills-tag-pill">
               <span className="star-mini">★</span>
@@ -53,7 +55,8 @@ const Section5Skills = () => {
               className="skill-card-premium"
               initial={{ opacity: 0, scale: 0.95, y: 30 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.05 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ ...fastTransition, delay: index * 0.04 }}
               whileHover={{
                 y: -10,
                 backgroundColor: 'rgba(223, 243, 20, 0.03)',
@@ -66,6 +69,8 @@ const Section5Skills = () => {
                     src={`page-sections/section5/${skill.icon}`}
                     alt={skill.name}
                     className="skill-svg-icon"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="skill-meta">

@@ -10,6 +10,8 @@
   --grid-size: 100px;
   --frost-blur: blur(25px); /* More intense frost */
   --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --speed-fast: 0.3s;
+  --speed-instant: 0.15s;
 }
 
 @media (max-width: 1200px) {
@@ -28,6 +30,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a, button, .glass-card, .badge {
+  transition: all var(--speed-fast) var(--transition-smooth);
+}
+
+button:active, .badge:active {
+  transition-duration: var(--speed-instant);
 }
 
 body {
@@ -138,19 +148,28 @@ body {
 }
 
 @media (max-width: 768px) {
-  .scroll-container {
-    scroll-snap-type: none;
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: auto;
-    min-height: 100vh;
-  }
-  
+  /* Remove forced viewport heights on mobile */
   .section-wrapper {
-    height: auto;
-    min-height: 100vh;
-    scroll-snap-align: none;
-    padding: 100px 20px; /* Increased padding */
+    height: auto !important;
+    min-height: max-content !important;
+    padding: 4rem 1.5rem !important; /* Standardize vertical padding */
+    margin-bottom: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: none !important;
+  }
+
+  /* Compact heavy gaps in main wrappers */
+  .flex-col, .grid {
+    gap: 2rem !important; /* Reduce massive desktop gaps */
+  }
+
+  /* Ensure the scroll container flows naturally */
+  .scroll-container {
+    height: auto !important;
+    overflow-y: visible !important;
+    scroll-snap-type: none !important; /* Disable scroll snapping on mobile for a tighter feed */
   }
 }
 
@@ -390,15 +409,15 @@ body {
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 120px 20px 60px 20px; /* More top padding to clear header and bottom space */
-    height: auto;
-    min-height: 100vh;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: auto !important;
   }
   
   .hero-content {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    gap: 40px;
+    gap: 24px;
     border: none;
     height: auto; /* Allow growth */
   }
@@ -509,6 +528,9 @@ body {
   .hero-visual-zone {
     order: 1;
     margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -541,7 +563,8 @@ body {
 @media (max-width: 768px) {
   .portrait-frame {
     width: 100%;
-    max-width: 300px;
+    max-width: 360px;
+    aspect-ratio: auto;
     background: transparent;
     border: none;
     backdrop-filter: none;
@@ -554,6 +577,13 @@ body {
   height: auto;
   object-fit: cover;
   filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+}
+
+@media (max-width: 768px) {
+  .main-portrait {
+    max-width: 360px;
+    width: 100%;
+  }
 }
 
 .resume-badge-wrap {

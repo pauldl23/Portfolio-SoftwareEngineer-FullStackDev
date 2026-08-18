@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { fastTransition } from '../utils/animations';
 
 // SVG Assets
 import icon1 from '../../page-sections/section3-svg/16_icon.svg';
@@ -38,7 +39,8 @@ const Section3Services = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={fastTransition}
             className="services-title-block"
           >
             <div className="services-badge">WHAT I OFFER</div>
@@ -71,12 +73,13 @@ const Section3Services = () => {
               className="glass-service-card"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ ...fastTransition, delay: index * 0.08 }}
             >
 
               <div className="card-top-row">
                 <div className="card-icon-wrap">
-                  <img src={service.icon} alt={service.title} className="service-icon-img" />
+                  <img src={service.icon} alt={service.title} className="service-icon-img" loading="lazy" decoding="async" />
                 </div>
                 <div className="card-title-group">
                   {service.ornament && <div className="card-ornament">{service.ornament}</div>}

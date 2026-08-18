@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { fastTransition } from '../utils/animations';
 
 const menuItems = [
   { name: 'Home', section: 1 },
@@ -19,7 +20,7 @@ const NavOverlay = ({ isOpen, onClose, activeSection, onNavigate }) => {
       className="nav-overlay-container"
       initial={{ x: '-100%' }}
       animate={{ x: 0 }}
-      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+      transition={fastTransition}
       exit={{ x: '-100%', transition: { duration: 0.3, ease: "easeIn" } }}
     >
       <div className="nav-menu-content">

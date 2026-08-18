@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { fastTransition } from '../utils/animations';
 
 const BioSection = () => {
   return (
@@ -11,10 +12,11 @@ const BioSection = () => {
               className="arched-glass-frame"
               initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
               whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
-              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={fastTransition}
             >
-              <img src="assets/section2/25_bg.png" alt="nature" className="bio-frame-bg" />
-              <img src="page-sections/otherassets/profile2.png" alt="Paul" className="bio-portrait" />
+              <img src="assets/section2/25_bg.png" alt="nature" className="bio-frame-bg" loading="lazy" decoding="async" />
+              <img src="page-sections/otherassets/profile2.png" alt="Paul" className="bio-portrait" loading="lazy" decoding="async" />
 
               <motion.div
                 className="diagonal-lime-strip"
@@ -37,7 +39,8 @@ const BioSection = () => {
           className="bio-text-side"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={fastTransition}
         >
           <div className="bio-pill">BIO</div>
           <h2 className="bio-headline">

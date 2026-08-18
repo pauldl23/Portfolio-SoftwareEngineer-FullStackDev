@@ -51,15 +51,17 @@ const projects = [
 /* Slide container transition */
 const slideVariants = {
   enter: (direction) => ({
-    x: direction > 0 ? '100%' : '-100%',
+    x: direction > 0 ? 400 : -400,
     opacity: 0,
   }),
   center: {
+    zIndex: 1,
     x: 0,
     opacity: 1,
   },
   exit: (direction) => ({
-    x: direction < 0 ? '100%' : '-100%',
+    zIndex: 0,
+    x: direction < 0 ? 400 : -400,
     opacity: 0,
   }),
 };
@@ -199,7 +201,10 @@ const Section7Video = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                x: { type: "spring", stiffness: 450, damping: 35 },
+                opacity: { duration: 0.25 }
+              }}
             >
               {/* Left: Project Details */}
               <div className="project-details-side">
@@ -261,6 +266,7 @@ const Section7Video = () => {
                             allow="autoplay; fullscreen"
                             frameBorder="0"
                             allowFullScreen
+                            loading="lazy"
                             title={current.titleAccent}
                           ></iframe>
                         ) : (

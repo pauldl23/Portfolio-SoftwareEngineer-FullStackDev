@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm, ValidationError } from '@formspree/react';
+import { fastTransition } from '../utils/animations';
 
 /* Reveal animation variants */
 const fadeInUp = {
@@ -8,7 +9,7 @@ const fadeInUp = {
   visible: (i) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.1 * i, duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+    transition: { delay: 0.08 * i, ...fastTransition }
   })
 };
 
@@ -29,7 +30,7 @@ const Section9Contact = () => {
         <div className="contact-left-col">
           <motion.div
             className="contact-pill"
-            custom={0} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+            custom={0} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp}
           >
             <span className="contact-star">✦</span>
             <span className="contact-pill-text">DROP ME A LINE</span>
@@ -37,7 +38,7 @@ const Section9Contact = () => {
 
           <motion.h2
             className="contact-headline"
-            custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+            custom={1} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp}
           >
             Contact me today and <span className="text-lime">let's <br />explore</span> how I can bring <br />your vision to life <span className="wave-emoji" role="img" aria-label="wave">👋</span>
           </motion.h2>
@@ -45,7 +46,7 @@ const Section9Contact = () => {
           <div className="contact-details-wrap">
             <motion.div
               className="contact-detail-item"
-              custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+              custom={2} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp}
             >
               <div className="detail-label">
                 <span className="detail-star">✦</span> PHONE
@@ -55,7 +56,7 @@ const Section9Contact = () => {
 
             <motion.div
               className="contact-detail-item"
-              custom={3} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+              custom={3} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp}
             >
               <div className="detail-label">
                 <span className="detail-star">✦</span> ADDRESS
@@ -75,8 +76,8 @@ const Section9Contact = () => {
           className="contact-resume-badge"
           initial={{ opacity: 0, scale: 0.8, rotate: -20 }}
           whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ delay: 0.2, ...fastTransition }}
           whileHover={{ scale: 1.05 }}
         >
           <div className="resume-badge-inner">
@@ -118,7 +119,7 @@ const Section9Contact = () => {
           ) : (
             <form onSubmit={handleSubmit} className="contact-form">
 
-              <motion.div className="form-step-group" custom={1} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <motion.div className="form-step-group" custom={1} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp}>
                 <div className={`step-indicator ${activeStep === 1 ? 'active' : ''}`}>01</div>
                 <div className="form-input-wrap">
                   <label htmlFor="name">What's your name?</label>
@@ -135,7 +136,7 @@ const Section9Contact = () => {
                 </div>
               </motion.div>
 
-              <motion.div className="form-step-group" custom={2} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <motion.div className="form-step-group" custom={2} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp}>
                 <div className={`step-indicator ${activeStep === 2 ? 'active' : ''}`}>02</div>
                 <div className="form-input-wrap">
                   <label htmlFor="email">What's your email address?</label>
@@ -152,7 +153,7 @@ const Section9Contact = () => {
                 </div>
               </motion.div>
 
-              <motion.div className="form-step-group" custom={3} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <motion.div className="form-step-group" custom={3} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp}>
                 <div className={`step-indicator ${activeStep === 3 ? 'active' : ''}`}>03</div>
                 <div className="form-input-wrap">
                   <label htmlFor="service">What service are you looking for?</label>
@@ -168,7 +169,7 @@ const Section9Contact = () => {
                 </div>
               </motion.div>
 
-              <motion.div className="form-step-group" custom={4} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <motion.div className="form-step-group" custom={4} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp}>
                 <div className={`step-indicator ${activeStep === 4 ? 'active' : ''}`}>04</div>
                 <div className="form-input-wrap">
                   <label htmlFor="message">Your message</label>
@@ -185,7 +186,7 @@ const Section9Contact = () => {
                 </div>
               </motion.div>
 
-              <motion.div className="form-submit-wrap" custom={5} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <motion.div className="form-submit-wrap" custom={5} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeInUp}>
                 <button type="submit" disabled={state.submitting} className="submit-message-btn">
                   {state.submitting ? 'SENDING...' : 'SEND MESSAGE'}
                   <span className="btn-dot-marker-dark"></span>

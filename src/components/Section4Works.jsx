@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { fastTransition } from '../utils/animations';
 
 const experiences = [
   {
@@ -37,7 +38,8 @@ const Section4Works = () => {
             className="exp-text-side"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={fastTransition}
           >
             <div className="exp-badge">MY EXPERIENCE</div>
             <h2 className="exp-headline">
@@ -69,7 +71,8 @@ const Section4Works = () => {
                 className="exp-row-premium"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ ...fastTransition, delay: index * 0.08 }}
               >
                 <div className="exp-year-col">
                   <div className="neon-pill">{exp.year}</div>

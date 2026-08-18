@@ -182,7 +182,7 @@ const Section6Projects = () => {
   const progress = ((currentIndex + 1) / projects.length) * 100;
 
   return (
-    <section className="projects-section">
+    <section className="projects-section mobile-ambient-glow">
       <div className="projects-container">
 
         {/* Top Row: Badge + Title + Counter */}
@@ -367,7 +367,7 @@ const Section6Projects = () => {
                 animate="visible"
                 variants={imageReveal}
               >
-                <div className="project-frame">
+                <div className="project-frame mobile-edge-to-edge">
                   <div className="project-image-wrap">
                     {current.hasVideo ? (
                       <div className="video-player-container">

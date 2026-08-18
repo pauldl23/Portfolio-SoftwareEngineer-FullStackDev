@@ -243,7 +243,7 @@ const Section8DataScience = () => {
                 animate="visible"
                 variants={imageReveal}
               >
-                <div className="project-frame">
+                <div className="project-frame mobile-edge-to-edge">
                   <div className="project-image-wrap">
                     {current.hasImage ? (
                       <img

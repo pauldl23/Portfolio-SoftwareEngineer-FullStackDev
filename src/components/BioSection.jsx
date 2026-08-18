@@ -19,7 +19,7 @@ const BioSection = () => {
               <img src="page-sections/otherassets/profile2.png" alt="Paul" className="bio-portrait" loading="lazy" decoding="async" />
 
               <motion.div
-                className="diagonal-lime-strip"
+                className="diagonal-lime-strip mobile-edge-to-edge"
                 animate={{ x: [-100, 0] }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
               >
@@ -65,7 +65,7 @@ const BioSection = () => {
             captivating visual stories.
           </p>
 
-          <div style={{ marginTop: '50px' }}>
+          <div className="bio-cta-wrapper">
             <a href="#contact" className="lets-work-cta">
               LET'S WORK <span className="accent-spark">✦</span>
               <div className="cta-underline"></div>

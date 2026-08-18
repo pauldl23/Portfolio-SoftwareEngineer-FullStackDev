@@ -4,7 +4,7 @@ import { fastTransition } from '../utils/animations';
 
 const HeroSection = () => {
   return (
-    <section className="hero-section">
+    <section className="hero-section mobile-ambient-glow">
       <div className="hero-content">
         <motion.div 
           className="hero-text-block"

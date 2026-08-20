@@ -145,6 +145,9 @@ body {
   flex-direction: column;
   justify-content: center;
   padding: 0;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 @media (max-width: 768px) {
@@ -160,6 +163,9 @@ body {
     flex-direction: column;
     justify-content: center;
     scroll-snap-align: none !important;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   /* Section 1 top clearance for fixed 60px navbar */
@@ -183,18 +189,22 @@ body {
     width: 100% !important;
   }
 
-  /* Modern Glass Card Containers with Generous Inner Margin/Padding */
+  /* Modern Glass Card Containers with Generous Inner Margin/Padding & GPU Acceleration */
   .bio-container,
   .services-container,
   .experience-container,
   .projects-container,
   .skills-container-premium,
-  .contact-container {
+  .contact-container,
+  .glass-service-card,
+  .exp-row-premium,
+  .skill-card-premium,
+  .glass-card {
     padding: 28px 20px !important; /* Generous inner margin/space inside the gray box */
     background: rgba(18, 18, 18, 0.75) !important;
-    backdrop-filter: blur(25px) !important;
-    -webkit-backdrop-filter: blur(25px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: var(--frost-blur) !important;
+    -webkit-backdrop-filter: var(--frost-blur) !important;
+    border: 1px solid var(--glass-border) !important;
     border-radius: 20px !important;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
     height: auto !important;
@@ -202,6 +212,9 @@ body {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .hero-content {
@@ -214,10 +227,11 @@ body {
     max-width: 100% !important;
   }
 
-  /* Ensure smooth natural flow and dock clearance */
+  /* Ensure smooth natural flow, no scroll snap, fluid hidden x overflow, and dock clearance */
   .scroll-container {
     height: auto !important;
     overflow-y: visible !important;
+    overflow-x: hidden !important;
     scroll-snap-type: none !important;
     padding-bottom: 110px !important; /* Clearance so floating dock never overlaps content */
   }
@@ -791,7 +805,7 @@ body {
   .footer-wrap {
     height: 75px !important;
     padding: 0 16px !important;
-    bottom: 12px !important;
+    bottom: 8px !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -802,10 +816,10 @@ body {
     width: 100% !important;
     max-width: 440px !important;
     height: 52px !important;
-    background: rgba(10, 10, 10, 0.75) !important;
-    backdrop-filter: blur(25px) !important;
-    -webkit-backdrop-filter: blur(25px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--frost-blur) !important;
+    -webkit-backdrop-filter: var(--frost-blur) !important;
+    border: 1px solid var(--glass-border) !important;
     border-radius: 100px !important;
     padding: 0 8px !important;
     box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5), 0 10px 30px rgba(0, 0, 0, 0.4) !important;
@@ -827,20 +841,12 @@ body {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-  }
-
-  .footer-btn-left-glass {
     border-radius: 50% !important;
-    border: none !important;
-    background: var(--accent-lime) !important;
-    box-shadow: 0 0 15px rgba(186, 255, 41, 0.35) !important;
-  }
-
-  .footer-btn-right-glass {
-    border-radius: 50% !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid var(--glass-border) !important;
+    background: var(--glass-bg) !important;
     color: var(--text-main) !important;
+    backdrop-filter: var(--frost-blur) !important;
+    -webkit-backdrop-filter: var(--frost-blur) !important;
   }
 
   .footer-spacer {

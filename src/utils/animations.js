@@ -12,3 +12,11 @@ export const fastStagger = {
     }
   }
 };
+
+export const spatialReveal = {
+  initial: { opacity: 0, y: 30, scale: 0.96, rotateX: 6 },
+  whileInView: { opacity: 1, y: 0, scale: 1, rotateX: 0 },
+  viewport: { once: true, margin: "-50px" },
+  transition: fastTransition
+};
+

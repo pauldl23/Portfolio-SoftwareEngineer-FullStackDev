@@ -10,10 +10,11 @@ const BioSection = () => {
           <div className="arched-frame-wrapper">
             <motion.div
               className="arched-glass-frame"
-              initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
-              whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+              initial={{ clipPath: "inset(100% 0% 0% 0%)", opacity: 0, scale: 0.96, rotateX: 6 }}
+              whileInView={{ clipPath: "inset(0% 0% 0% 0%)", opacity: 1, scale: 1, rotateX: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={fastTransition}
+              style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
             >
               <img src="assets/section2/25_bg.png" alt="nature" className="bio-frame-bg" loading="lazy" decoding="async" />
               <img src="page-sections/otherassets/profile2.png" alt="Paul" className="bio-portrait" loading="lazy" decoding="async" />
@@ -37,10 +38,11 @@ const BioSection = () => {
 
         <motion.div
           className="bio-text-side"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30, scale: 0.96, rotateX: 6 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={fastTransition}
+          style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
         >
           <div className="bio-pill">BIO</div>
           <h2 className="bio-headline">

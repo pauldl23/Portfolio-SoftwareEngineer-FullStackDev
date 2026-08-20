@@ -36,10 +36,11 @@ const Section4Works = () => {
         <div className="exp-content-grid">
           <motion.div
             className="exp-text-side"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30, scale: 0.96, rotateX: 6 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={fastTransition}
+            style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
           >
             <div className="exp-badge">MY EXPERIENCE</div>
             <h2 className="exp-headline">
@@ -69,10 +70,11 @@ const Section4Works = () => {
               <motion.div
                 key={exp.id}
                 className="exp-row-premium"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20, scale: 0.96, rotateX: 6 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ ...fastTransition, delay: index * 0.08 }}
+                style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
               >
                 <div className="exp-year-col">
                   <div className="neon-pill">{exp.year}</div>

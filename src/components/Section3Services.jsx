@@ -37,10 +37,11 @@ const Section3Services = () => {
       <div className="services-container">
         <header className="services-header">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, scale: 0.96, rotateX: 6 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={fastTransition}
+            style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
             className="services-title-block"
           >
             <div className="services-badge">WHAT I OFFER</div>
@@ -71,10 +72,11 @@ const Section3Services = () => {
             <motion.div
               key={service.id}
               className="glass-service-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30, scale: 0.96, rotateX: 6 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ ...fastTransition, delay: index * 0.08 }}
+              style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
             >
 
               <div className="card-top-row">

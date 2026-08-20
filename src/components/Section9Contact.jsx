@@ -111,7 +111,7 @@ const Section9Contact = () => {
                 </svg>
               </div>
               <h3 className="success-title">Message Sent Successfully!</h3>
-              <p className="success-text">Thank you for reaching out, Paul. I will get back to you shortly.</p>
+              <p className="success-text">Thank you for reaching out. Paul will get back to you shortly.</p>
               <button onClick={() => window.location.reload()} className="back-btn-premium">
                 SEND ANOTHER MESSAGE
               </button>
@@ -123,13 +123,13 @@ const Section9Contact = () => {
                 <div className={`step-indicator ${activeStep === 1 ? 'active' : ''}`}>01</div>
                 <div className="form-input-wrap">
                   <label htmlFor="name">What's your name?</label>
-                  <input 
-                    id="name" 
-                    type="text" 
-                    name="name" 
-                    placeholder="Type your full name" 
-                    className="premium-input" 
-                    required 
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="Type your full name"
+                    className="premium-input"
+                    required
                     onFocus={() => setActiveStep(1)}
                   />
                   <ValidationError prefix="Name" field="name" errors={state.errors} />
@@ -140,13 +140,13 @@ const Section9Contact = () => {
                 <div className={`step-indicator ${activeStep === 2 ? 'active' : ''}`}>02</div>
                 <div className="form-input-wrap">
                   <label htmlFor="email">What's your email address?</label>
-                  <input 
-                    id="email" 
-                    type="email" 
-                    name="email" 
-                    placeholder="example@gmail.com" 
-                    className="premium-input" 
-                    required 
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="example@gmail.com"
+                    className="premium-input"
+                    required
                     onFocus={() => setActiveStep(2)}
                   />
                   <ValidationError prefix="Email" field="email" errors={state.errors} />
@@ -157,12 +157,12 @@ const Section9Contact = () => {
                 <div className={`step-indicator ${activeStep === 3 ? 'active' : ''}`}>03</div>
                 <div className="form-input-wrap">
                   <label htmlFor="service">What service are you looking for?</label>
-                  <input 
-                    id="service" 
-                    type="text" 
-                    name="service" 
-                    placeholder="Web Design, Web Development ..." 
-                    className="premium-input" 
+                  <input
+                    id="service"
+                    type="text"
+                    name="service"
+                    placeholder="Web Design, Web Development ..."
+                    className="premium-input"
                     onFocus={() => setActiveStep(3)}
                   />
                   <ValidationError prefix="Service" field="service" errors={state.errors} />
@@ -173,13 +173,13 @@ const Section9Contact = () => {
                 <div className={`step-indicator ${activeStep === 4 ? 'active' : ''}`}>04</div>
                 <div className="form-input-wrap">
                   <label htmlFor="message">Your message</label>
-                  <input 
-                    id="message" 
-                    type="text" 
-                    name="message" 
-                    placeholder="Hello Paul, can you help me with ..." 
-                    className="premium-input border-last" 
-                    required 
+                  <input
+                    id="message"
+                    type="text"
+                    name="message"
+                    placeholder="Hello Paul, can you help me with ..."
+                    className="premium-input border-last"
+                    required
                     onFocus={() => setActiveStep(4)}
                   />
                   <ValidationError prefix="Message" field="message" errors={state.errors} />

@@ -1,35 +1,72 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { fastTransition } from '../utils/animations';
 
-const experiences = [
-  {
-    id: 4,
-    year: "2025-Present",
-    role: "Full Stack Developer",
-    company: "FREELANCE"
-  },
-  {
-    id: 3,
-    year: "2025",
-    role: "Assistant End-user Support",
-    company: "UBIQUITY GLOBAL SERVICES"
-  },
+const workExperiences = [
   {
     id: 1,
-    year: "2024",
-    role: "Video Editor",
-    company: "CLEAVER CREATIVES"
+    role: "Full Stack Developer",
+    company: "Self-Employed / Remote",
+    date: "February 2025 - Present",
+    location: "Remote",
+    responsibilities: [
+      "Developed and deployed responsive websites for clients using HTML, CSS, JavaScript, and PHP",
+      "Collaborated with clients to gather requirements and deliver tailored web solutions",
+      "Optimized website performance and improved user experience across devices",
+      "Managed end-to-end development lifecycle from design to deployment",
+      "Integrated RESTful APIs and backend services for client-based web applications",
+      "Worked with deployment environments, backend workflows, and cloud-based hosting platforms"
+    ]
   },
   {
     id: 2,
-    year: "2024",
-    role: "Video Editor",
-    company: "COACHTUBE"
+    role: "Assistant EndUser Support",
+    company: "Ubiquity Global Services (Internship)",
+    date: "July 2025",
+    location: "Bacolod City",
+    responsibilities: [
+      "Provided first-level technical support to end users, resolving hardware, software, and network-related issues",
+      "Assisted in troubleshooting desktops and peripheral devices",
+      "Installed, configured, and updated operating systems and business applications",
+      "Documented issues, solutions, and processes for knowledge base improvement",
+      "Followed company IT policies, security protocols, and data protection standards"
+    ]
+  },
+  {
+    id: 3,
+    role: "Video Editor / Virtual Assistant",
+    company: "Cleaver Creatives",
+    date: "August 2024",
+    location: "Chicago, IL",
+    responsibilities: [
+      "Edited engaging content for various clients, including podcasts, social media reels, and branded videos.",
+      "Applied motion graphics, subtitles, and creative transitions to enhance storytelling and viewer engagement."
+    ]
+  },
+  {
+    id: 4,
+    role: "Video Editor / Virtual Assistant",
+    company: "Coachtube",
+    date: "February 2024",
+    location: "Austin, Texas",
+    responsibilities: [
+      "Edited educational sports videos",
+      "Conducted in-depth research on coaching topics and organized materials to support video content creation."
+    ]
   }
 ];
 
 const Section4Works = () => {
+  const [selectedExperience, setSelectedExperience] = useState(null);
+
+  const handleNextExperience = (e) => {
+    e.stopPropagation();
+    if (!selectedExperience) return;
+    const currentIndex = workExperiences.findIndex(exp => exp.id === selectedExperience.id);
+    const nextIndex = (currentIndex + 1) % workExperiences.length;
+    setSelectedExperience(workExperiences[nextIndex]);
+  };
+
   return (
     <section className="experience-section">
       <div className="experience-container">
@@ -66,7 +103,7 @@ const Section4Works = () => {
           </motion.div>
 
           <div className="exp-list-side">
-            {experiences.map((exp, index) => (
+            {workExperiences.map((exp, index) => (
               <motion.div
                 key={exp.id}
                 className="exp-row-premium"
@@ -74,10 +111,13 @@ const Section4Works = () => {
                 whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ ...fastTransition, delay: index * 0.08 }}
-                style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setSelectedExperience(exp)}
+                style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden', cursor: 'pointer' }}
               >
                 <div className="exp-year-col">
-                  <div className="neon-pill">{exp.year}</div>
+                  <div className="neon-pill">{exp.date}</div>
                 </div>
 
                 <div className="exp-info-col">
@@ -98,10 +138,76 @@ const Section4Works = () => {
         </div>
       </div>
 
+      <AnimatePresence>
+        {selectedExperience && (
+          <motion.div
+            className="exp-modal-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={fastTransition}
+            onClick={() => setSelectedExperience(null)}
+          >
+            <motion.div
+              className="exp-modal-card"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={fastTransition}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="exp-modal-desktop-close"
+                onClick={() => setSelectedExperience(null)}
+                aria-label="Close modal"
+              >
+                ✕
+              </button>
+
+              <div className="exp-modal-header">
+                <div className="exp-modal-badge">{selectedExperience.date}</div>
+                <h2 className="exp-modal-role">{selectedExperience.role}</h2>
+                <div className="exp-modal-meta">
+                  <span className="exp-modal-company">{selectedExperience.company}</span>
+                  <span className="exp-modal-dot">•</span>
+                  <span className="exp-modal-location">{selectedExperience.location}</span>
+                </div>
+              </div>
+
+              <div className="exp-modal-body">
+                <h4 className="exp-modal-section-title">KEY RESPONSIBILITIES & CONTRIBUTIONS</h4>
+                <ul className="exp-modal-bullets">
+                  {selectedExperience.responsibilities.map((resp, i) => (
+                    <li key={i} className="exp-modal-bullet-item">
+                      <span className="bullet-spark">✦</span>
+                      <span>{resp}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="exp-modal-footer-mobile">
+                <button
+                  className="exp-modal-btn-done"
+                  onClick={() => setSelectedExperience(null)}
+                >
+                  DONE
+                </button>
+                <button
+                  className="exp-modal-btn-next"
+                  onClick={handleNextExperience}
+                >
+                  NEXT →
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="exp-bg-glow"></div>
     </section>
   );
 };
 
 export default Section4Works;
-

@@ -2136,23 +2136,49 @@ body {
 .exp-row-premium {
   position: relative;
   display: grid;
-  grid-template-columns: max-content 1fr 40px;
+  grid-template-columns: 200px 1fr 40px;
   gap: 20px;
   align-items: center;
-  padding: 35px 0;
+  padding: 24px 16px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all var(--speed-fast) var(--transition-smooth);
+}
+
+.exp-row-premium:hover {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
 }
 
 @media (max-width: 768px) {
   .exp-row-premium {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 25px 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding: 16px 18px !important;
   }
   .exp-arrow-col {
-    display: none; /* Hide arrow on mobile to save space */
+    display: none !important; /* Hide arrow on mobile to save space */
   }
+}
+
+.exp-year-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.exp-info-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
 }
 
 .exp-row-divider {
@@ -2173,6 +2199,7 @@ body {
   font-size: 10px;
   font-weight: 700;
   white-space: nowrap;
+  width: fit-content;
 }
 
 .exp-item-title {
@@ -2180,6 +2207,7 @@ body {
   font-weight: 700;
   color: var(--text-main);
   margin-bottom: 5px;
+  text-align: left;
 }
 
 .exp-item-company {
@@ -2187,17 +2215,21 @@ body {
   font-weight: 600;
   color: var(--text-muted);
   letter-spacing: 0.05em;
+  text-align: left;
 }
 
 .exp-arrow-col {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   opacity: 0.3;
-  transition: opacity 0.3s ease;
+  transition: all var(--speed-fast) var(--transition-smooth);
 }
 
 .exp-row-premium:hover .exp-arrow-col {
   opacity: 1;
+  transform: translate(3px, -3px);
+  color: var(--accent-lime);
 }
 
 .exp-bg-glow {

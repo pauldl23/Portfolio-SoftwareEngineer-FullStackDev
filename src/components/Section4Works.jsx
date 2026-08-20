@@ -111,8 +111,8 @@ const Section4Works = () => {
                 whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ ...fastTransition, delay: index * 0.08 }}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: 1.015, x: 4 }}
+                whileTap={{ scale: 0.985 }}
                 onClick={() => setSelectedExperience(exp)}
                 style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden', cursor: 'pointer' }}
               >

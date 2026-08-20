@@ -95,7 +95,13 @@ function App() {
         )}
       </AnimatePresence>
 
-      <main className={`scroll-container ${isNavOpen ? 'blurred-content' : ''}`} ref={scrollContainerRef}>
+      <main 
+        className={`scroll-container ${isNavOpen ? 'blurred-content' : ''}`} 
+        ref={scrollContainerRef}
+        onClick={() => {
+          if (isNavOpen) setIsNavOpen(false);
+        }}
+      >
         <div className="section-wrapper" data-section="1">
           <HeroSection />
         </div>

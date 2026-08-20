@@ -22,8 +22,9 @@ const NavOverlay = ({ isOpen, onClose, activeSection, onNavigate }) => {
       animate={{ x: 0 }}
       transition={fastTransition}
       exit={{ x: '-100%', transition: { duration: 0.3, ease: "easeIn" } }}
+      onClick={onClose}
     >
-      <div className="nav-menu-content">
+      <div className="nav-menu-content" onClick={(e) => e.stopPropagation()}>
         <div className="nav-links-list">
           {menuItems.map((item, index) => (
             <motion.button
@@ -45,7 +46,7 @@ const NavOverlay = ({ isOpen, onClose, activeSection, onNavigate }) => {
       </div>
 
       {/* Vertical Ribbon */}
-      <div className="nav-vertical-ribbon">
+      <div className="nav-vertical-ribbon" onClick={(e) => e.stopPropagation()}>
         <div className="ribbon-marquee">
           <span>AVAILABLE FOR COLLABORATIONS • LETS CREATE SMTH NEW TOGETHER • AVAILABLE FOR COLLABORATIONS • </span>
           <span>AVAILABLE FOR COLLABORATIONS • LETS CREATE SMTH NEW TOGETHER • AVAILABLE FOR COLLABORATIONS • </span>
@@ -55,7 +56,10 @@ const NavOverlay = ({ isOpen, onClose, activeSection, onNavigate }) => {
       {/* Close Button */}
       <motion.button
         className="nav-close-pill"
-        onClick={onClose}
+        onClick={(e) => {
+          e.stopPropagation();
+          onClose();
+        }}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.6 }}
